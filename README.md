@@ -131,6 +131,143 @@ Note: Ensure proper authorization for actions like category, discussion, and top
 - **Django REST Framework**
 - **SQLite**
 
+# Forum API Documentation
+
+## Auth
+
+### Login
+
+- **Method:** POST
+- **URL:** `{{8000}}/api/login/`
+- **Request Body:**
+    ```json
+    {
+        "username": "username",
+        "password": "password"
+    }
+    ```
+- **Response:** *(No specific details provided)*
+
+### Register
+
+- **Method:** POST
+- **URL:** `{{8000}}/api/signup/`
+- **Request Body:**
+    ```json
+    {
+        "username": "username",
+        "password": "password",
+        "email": "email"
+    }
+    ```
+- **Response:** *(No specific details provided)*
+
+## Categories
+
+### All
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/categories/`
+- **Response:** *(No specific details provided)*
+
+### Detail
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/categories/1`
+- **Response:** *(No specific details provided)*
+
+### Discussions
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/categories/1/discussions`
+- **Response:** *(No specific details provided)*
+
+## Discussions
+
+### All
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/discussions/`
+- **Response:** *(No specific details provided)*
+
+### Detail
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/discussions/1`
+- **Response:** *(No specific details provided)*
+
+### Topics
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/discussions/1/topics`
+- **Response:** *(No specific details provided)*
+
+## Topics
+
+### Create
+
+- **Method:** POST
+- **URL:** `{{8000}}/api/topics/`
+- **Request Body:**
+    ```json
+    {
+        "discussion_id": 1,
+        "title": "title",
+        "description": "description",
+        "author": "author",
+        "last_author": "author",
+        "replies": 0,
+        "date": "Y-m-d",
+        "last_date": "Y-m-d",
+        "views": 0,
+        "unread": 0
+    }
+    ```
+- **Response:** *(No specific details provided)*
+
+### Detail
+
+- **Method:** GET
+- **URL:** `{{8000}}/api/topics/1`
+- **Response:** *(No specific details provided)*
+
+### Delete
+
+- **Method:** DELETE
+- **URL:** `{{8000}}/api/topics/1`
+- **Request Body:**
+    ```json
+    {
+        "discussion_id": 1,
+        "title": "title",
+        "description": "description",
+        "author": "author",
+        "last_author": "author",
+        "replies": 0,
+        "date": "Y-m-d",
+        "last_date": "Y-m-d",
+        ""
+    }
+    ```
+- **Response:** *(No specific details provided)*
+
+## Comments
+
+### Create
+
+- **Method:** POST
+- **URL:** `{{8000}}/api/comments/`
+- **Request Body:**
+    ```json
+    {
+        "topic_id": 1,
+        "author": "Author",
+        "content": "Comment description",
+        "date": "Y-m-d"
+    }
+    ```
+- **Response:** *(No specific details provided)*
+
 ## Acknowledgments
 
 Special thanks to the StackOverflow community for inspiring this project.
